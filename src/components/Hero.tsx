@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { identity } from "../data/content";
 import { usePrefersReducedMotion, useScramble } from "../lib/hooks";
 import { ArrowRight } from "./ui";
+import { HexagonBackground } from "./HexagonBackground";
+
 
 function OrbitBadge() {
   return (
@@ -32,6 +34,9 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative flex min-h-svh flex-col justify-between overflow-hidden pt-24">
+      {/* decorative honeycomb — -z-10 layer, never affects the hero's
+          flex layout and paints above the WebGL scene layer */}
+      <HexagonBackground />
       {/* vertical katakana rail */}
       <p
         className="absolute right-7 top-1/2 hidden -translate-y-1/2 font-mono text-[11px] tracking-[0.5em] text-smoke-deep uppercase xl:block"
